@@ -1,3 +1,11 @@
-  [build]
-    command = "npm run build"
-    publish = "client/dist"
+[build]
+  command = "npm run build"
+  # Paths here are relative to the base directory ("client"), so this is client/dist.
+  publish = "dist"
+
+# React Router (BrowserRouter) handles routing in the browser, so every
+# unknown path must serve index.html instead of a 404.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
