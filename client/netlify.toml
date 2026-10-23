@@ -1,3 +1,9 @@
-  [build]
-    command = "npm run build"
-    publish = "client/dist"
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Single-page app: let React Router handle every route (e.g. /login, /dashboard)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
